@@ -1,0 +1,51 @@
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+nz-card {
+    padding: 80px;
+    border-radius: 0px;
+    box-shadow: 10px -5px 10px -10px rgb(97 97 97 / 23%), 5px 15px 15px -10px rgb(97 97 97 / 23%);
+
+    h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+}
+
+.login-form {
+    nz-input-group {
+        border-radius: 5px;
+
+        input {
+            padding: 5px;
+        }
+    }
+
+    .valid {
+        border-color: #f9c64e;
+    }
+
+    .login-form-button {
+        font-size: 15px;
+        height: 45px;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .login-form-margin {
+        margin-bottom: 16px;
+    }
+
+    .login-form-forgot {
+        float: left;
+    }
+
+    .login-form-register {
+        float: right;
+    }
+}

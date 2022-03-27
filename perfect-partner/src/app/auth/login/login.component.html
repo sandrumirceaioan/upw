@@ -1,0 +1,37 @@
+<div nz-row class="vertical-center">
+    <div nz-col nzSpan="6" nzPush="9">
+        <nz-card [nzBordered]="false">
+            <h1 align="center">LOGIN</h1>
+            <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="login()">
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Username or email is required" nzHasFeedback>
+                        <nz-input-group nzPrefixIcon="user" [class.valid]="loginForm.get('user')?.valid">
+                            <input type="text" nz-input formControlName="user" placeholder="Username or email" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Password is required" nzHasFeedback>
+                        <nz-input-group nzPrefixIcon="lock" [class.valid]="loginForm.get('password')?.valid">
+                            <input type="password" nz-input formControlName="password" placeholder="Password" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" [disabled]="!loginForm.valid">Login</button>
+                <div nz-row class="login-form-margin">
+                    <div nz-col nzSpan="12">
+                        <a class="login-form-forgot">Forgot Password</a>
+                    </div>
+                    <div nz-col nzSpan="12">
+                        <a class="login-form-register">Register</a>
+                    </div>
+                </div>
+                <div nz-row nzJustify="center">
+                    <div nz-col>
+                        <img src="assets/form-logo.png" alt="form-logo">
+                    </div>
+                </div>
+            </form>
+        </nz-card>
+    </div>
+</div>
