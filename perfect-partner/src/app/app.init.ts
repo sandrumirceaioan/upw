@@ -1,16 +1,18 @@
 import { KeycloakService } from 'keycloak-angular';
+import { environment } from '../environments/environment';
 
 export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
     return () =>
         keycloak.init({
             config: {
-                url: 'http://localhost:8280/auth',
-                realm: 'polynom',
-                clientId: 'perfect-partner'
+                url: environment.url,
+                realm: environment.realm,
+                clientId: environment.clientId,
             },
             initOptions: {
                 checkLoginIframe: true,
-                checkLoginIframeInterval: 25
+                checkLoginIframeInterval: 25,
+                enableLogging: true
             },
             loadUserProfileAtStartUp: true
         });
